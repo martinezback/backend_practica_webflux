@@ -1,5 +1,7 @@
 package co.com.softlond.model;
 
+import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,12 +10,11 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
-public class Persona {
+@Setter
+public class PlantillaModel {
     private String nombre;
-    private String apellido;
-    private int edad;
-    private String direccion;
-    private String telefono;
+    private Date fecha;
+    private String descripcion;
+    private Date fechaActualizacion;
 }
