@@ -1,7 +1,8 @@
 package co.com.softlond.mongo.Collections;
 
-import java.sql.Date;
+import java.util.Date;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -10,6 +11,8 @@ import lombok.Data;
 @Document(collection = "plantilla")
 public class PlantillaCollections {
 
+    @Id
+    private String id;
     private String nombre;
     private Date fecha;
     private String descripcion;
