@@ -12,10 +12,15 @@ import reactor.core.publisher.Mono;
 
 public class AppServiceApplication {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(AppServiceApplication.class, args);
 
 		Mono.just("Hello WebFlux!").subscribe(System.out::println);
+		Flux<Long> numbers= Flux.just(1L,2L);
+
+		numbers.subscribe(number-> System.out.println(number));
 
 	}
 }
+

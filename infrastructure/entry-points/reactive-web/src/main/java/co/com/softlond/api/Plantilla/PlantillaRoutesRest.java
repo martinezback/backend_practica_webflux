@@ -14,6 +14,7 @@ public class PlantillaRoutesRest {
     
     @Bean
     public RouterFunction<ServerResponse> plantillaRoutes(PlantillaHandler plantillaHandler) {
-        return route(POST("/api/plantilla/save"), plantillaHandler::savePlantilla);
+        return route(POST("/api/plantilla/save"), plantillaHandler::savePlantilla)
+        .andRoute(POST("/api/plantilla/update"), plantillaHandler::udpatePlantilla);
     }
 }

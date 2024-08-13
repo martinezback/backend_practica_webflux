@@ -18,5 +18,27 @@ public class PlantillaGatewaysImpl implements PlantillaGateways {
         return reactivePlantillaMongoRepository.save(PlantillaMapper.toCollection(plantilla))
                 .map(plantillaEntity -> PlantillaMapper.toModel(plantillaEntity));
     }
+
+    @Override
+    public Mono<PlantillaModel> findById(String id) {
+        return reactivePlantillaMongoRepository.findById(id).map(plantilla-> PlantillaMapper.toModel(plantilla));
+    }
+
+    @Override
+    public Mono<Boolean> findOne() {
+        return reactivePlantillaMongoRepository.count()
+            .map(count -> count > 0); 
+    }
+
+    @Override
+    public Mono<Boolean> existByid(String id) {
+        return reactivePlantillaMongoRepository.existsById(id);
+    }
+
+    @Override
+    public Mono<PlantillaModel> updatePlantilla(PlantillaModel plantilla) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updatePlantilla'");
+    }
     
 }
